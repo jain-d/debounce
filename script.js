@@ -6,11 +6,11 @@ let timestamp;
 
 let agentMarkup = document.body.querySelector(".agent");
 let agent = navigator.userAgent;
-if (agent.includes("Safari")) {
-   agentMarkup.innerText = `This could be safari`;
-   if (!agent.includes("Chrome")) {
-      agentMarkup.innerText = `This is Safari`;
-   }
+if (agent.includes("Safari") && !agent.includes("Chrome")) {
+   agentMarkup.innerText = `This is Safari`;
+}
+else if (agent.includes("Safari") && agent.includes("Chrome")) {
+   agentMarkup.innerText = `Chrome, or some variant of it.`;
 }
 
 const handlerFunction = event => {

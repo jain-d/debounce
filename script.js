@@ -8,9 +8,11 @@ let agentMarkup = document.body.querySelector(".agent");
 let agent = navigator.userAgent;
 if (agent.includes("Safari") && !agent.includes("Chrome")) {
    agentMarkup.innerText = `This is Safari`;
+   agentMarkup.style.color = "green";
 }
 else if (agent.includes("Safari") && agent.includes("Chrome")) {
    agentMarkup.innerText = `Chrome, or some variant of it.`;
+   agentMarkup.style.color = "orange";
 }
 
 const handlerFunction = event => {
